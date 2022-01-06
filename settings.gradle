@@ -1,0 +1,2 @@
+rootProject.name='TestCodingAndroid-Indodana'
+include ':app'
