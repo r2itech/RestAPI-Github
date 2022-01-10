@@ -86,7 +86,7 @@ public class MainActivity extends BaseActivity {
         rv_list_user.setHasFixedSize(true);
 
         userViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(UserViewModel.class);
-        userViewModel.getResultListUser().observe(this, searchUsersData -> {
+        userViewModel.getSearchUser().observe(this, searchUsersData -> {
             HideLoading();
             if(searchUsersData.size() != 0){
                 searchAdapter.setSearchUserList(searchUsersData);

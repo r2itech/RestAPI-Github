@@ -9,9 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -24,13 +21,11 @@ import com.ryucant.testcodingandroid_indodana.viewmodel.UserViewModel;
 
 public class FollowerFragment extends Fragment {
 
-    SearchUsersData searchUsersData;
     UserViewModel userViewModel;
     FollowAdapter followAdapter;
     RecyclerView rv_list_follower;
     LinearLayout icon_no_data;
     TextView tv_no_data;
-    ProgressDialog progressDialog;
     String username;
 
     public FollowerFragment(){
@@ -39,11 +34,6 @@ public class FollowerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_follow, container, false);
-
-        progressDialog = new ProgressDialog(getContext());
-        progressDialog.setTitle("Please wait...");
-        progressDialog.setCancelable(false);
-        progressDialog.setMessage("Showing data");
 
         rv_list_follower = view.findViewById(R.id.rv_list_follow);
         icon_no_data = view.findViewById(R.id.icon_no_data);
@@ -68,9 +58,7 @@ public class FollowerFragment extends Fragment {
 
         userViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(UserViewModel.class);
         userViewModel.setFollowerUser(username);
-        progressDialog.show();
         userViewModel.getFollowerUser().observe(getViewLifecycleOwner(), follower -> {
-            progressDialog.dismiss();
             if (follower.size() != 0) {
                 icon_no_data.setVisibility(View.GONE);
                 followAdapter.setFollowList(follower);

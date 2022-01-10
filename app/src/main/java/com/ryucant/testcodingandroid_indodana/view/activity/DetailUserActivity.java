@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -64,13 +65,16 @@ public class DetailUserActivity extends BaseActivity {
 
         username = getIntent().getStringExtra("username");
 
+        //Set Fragment
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), username));
         viewPager.setOffscreenPageLimit(2);
         tabsLayout.setupWithViewPager(viewPager);
 
         userViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(UserViewModel.class);
+        ShowLoading();
         userViewModel.setUserDetail(username);
         userViewModel.getUserDetail().observe(this, detailUser -> {
+            HideLoading();
             Glide.with(getApplicationContext())
                     .load(detailUser.getAvatarUrl())
                     .into(img_user);
@@ -93,5 +97,10 @@ public class DetailUserActivity extends BaseActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

@@ -50,7 +50,7 @@ public class UserViewModel extends ViewModel {
         });
     }
 
-    public LiveData<ArrayList<SearchUsersData>> getResultListUser(){
+    public LiveData<ArrayList<SearchUsersData>> getSearchUser(){
         return modelSearchUsersMutableLiveData;
     }
 
