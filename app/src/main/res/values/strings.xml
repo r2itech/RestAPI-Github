@@ -1,4 +1,5 @@
 <resources>
+    <string name="my_name">Dede Rian</string>
     <string name="app_name">TestCodingAndroid-Indodana</string>
     <string name="search_user">Search github users</string>
     <string name="no_data">No data to display!</string>
