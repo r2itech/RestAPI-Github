@@ -21,7 +21,7 @@ import retrofit2.Response;
 
 public class UserViewModel extends ViewModel {
 
-    public static String api_key = "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";
+    public static String api_key = "insert_your_api_key_here";
 
     private MutableLiveData<ArrayList<SearchUsersData>> modelSearchUsersMutableLiveData = new MutableLiveData<>();
     private MutableLiveData<DetailUser> modelDetailUserMutableLiveData = new MutableLiveData<>();
