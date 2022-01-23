@@ -1,20 +1,20 @@
 <resources>
     <string name="my_name">Dede Rian</string>
-    <string name="app_name">TestCodingAndroid-Indodana</string>
+    <string name="app_name">RestAPI-Github</string>
     <string name="search_user">Search github users</string>
     <string name="no_data">No data to display!</string>
     <string name="no_data_user">User not found!</string>
     <string name="username">Github username</string>
     <string name="url">github url</string>
-    <string name="app_footer">TestCoding-Indodana @DedeRian-2021</string>
-    <string name="app_name1">Test Coding Android Indodana</string>
+    <string name="app_footer">Gihtub API @DedeRian-2021</string>
+    <string name="app_name1">Rest API - Github</string>
     <string name="app_name2">Github API</string>
     <string name="ver">Version 1.0</string>
     <string name="bio">(Bio user)</string>
     <string name="follower">Follower</string>
-    <string name="follower1">105</string>
+    <string name="follower1">0</string>
     <string name="following">Following</string>
-    <string name="following1">7</string>
+    <string name="following1">0</string>
     <string name="repo">Repository</string>
-    <string name="repo1">9</string>
+    <string name="repo1">0</string>
 </resources>
